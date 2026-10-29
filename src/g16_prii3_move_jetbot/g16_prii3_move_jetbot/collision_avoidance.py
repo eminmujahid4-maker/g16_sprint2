@@ -17,10 +17,12 @@ class CollisionAvoidanceWithDrawing(DrawNumber):
         if len(msg.ranges) > 0:
             front_distance = msg.ranges[0]
             if front_distance > msg.range_min and front_distance < self.safe_distance:
-                if not self.obstacle:
-                    self.get_logger().info('¡Obstáculo detectado! Frenando...')
+               if not self.obstacle:
+                    self.get_logger().info(f'¡Obstáculo detectado a {front_distance:.2f}m! Frenando...')
                 self.obstacle = True
             else:
+                if self.obstacle:
+                    self.get_logger().info('¡Obstáculo retirado! Continuando trayectoria...')
                 self.obstacle = False
 
     def dibujar(self):
