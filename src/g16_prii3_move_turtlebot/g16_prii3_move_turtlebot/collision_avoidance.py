@@ -1,16 +1,11 @@
-#!/usr/bin/env python3
 import rclpy
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import Twist
-
-# Importas tu clase o lógica desde draw_number (si están en el mismo paquete o archivo)
-# O simplemente integras el chequeo del láser dentro de tu bucle de dibujo:
-from g16_prii3_move_turtlebot.draw_number import DrawNumberTurtlebot # (Ejemplo de importación)
+from g16_prii3_move_turtlebot.draw_number import DrawNumberTurtlebot
 
 class CollisionAvoidanceWithDrawing(DrawNumberTurtlebot):
     def __init__(self):
         super().__init__()
-        # Cambiamos el nombre del nodo si es necesario
         self.get_logger().info('Nodo Collision Avoidance con dibujo iniciado.')
         
         # Añadimos el suscriptor del láser
@@ -29,16 +24,12 @@ class CollisionAvoidanceWithDrawing(DrawNumberTurtlebot):
                 self.obstacle = False
 
 
-
-    # Sobrescribimos o adaptamos el método 'dibujar' para que compruebe el obstáculo antes de avanzar
     def dibujar(self):
         if self.obstacle:
-            # Si hay obstáculo, detenemos el movimiento pero NO avanzamos el contador de pasos del dibujo
             msg = Twist()
             self.pub.publish(msg)
             return
-        
-        # Si no hay obstáculo, llamamos al método original de dibujo
+
         super().dibujar()
 
 def main(args=None):
