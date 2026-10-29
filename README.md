@@ -82,7 +82,7 @@ Terminal 3 (cuando el robot esté avanzando, crea un cubo delante de él):
 ```
 cd g16_prii3_ws
 source install/setup.bash
-ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity "{name: 'cubo', xml: '$(cat ~/cubo.sdf)', initial_pose: {position: {x: 1.5, y: 0.0, z: 0.0}}}"
+ros2 service call /spawn_entity gazebo_msgs/srv/SpawnEntity "{name: 'cubo', xml: '$(cat ~/g16_prii3_ws/cubo.sdf)', initial_pose: {position: {x: 1.5, y: 0.0, z: 0.0}}}"
 ```
 
 El robot se detiene. Para quitar el cubo y que el robot continúe:
