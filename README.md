@@ -105,7 +105,7 @@ Se conecta al robot por SSH y se necesitan dos terminales dentro del robot.
 La primera vez, en el robot:
 
 ```
-git clone https://github.com/eminmujahid4-maker/g16_sprint2.git
+git clone https://github.com/eminmujahid4-maker/g16_sprint2.git g16_prii3_ws
 cd g16_prii3_ws
 colcon build --symlink-install --packages-select g16_prii3_move_jetbot
 source install/setup.bash
