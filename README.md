@@ -17,7 +17,7 @@ sudo apt install ros-humble-gazebo-ros-pkgs ros-humble-turtlebot3-gazebo
 En una terminal, copia estos comandos:
 
 ```
-git clone https://github.com/eminmujahid4-maker/g16_prii3_ws.git
+git clone https://github.com/eminmujahid4-maker/g16_sprint2.git g16_prii3_ws
 cd g16_prii3_ws
 colcon build --symlink-install
 source install/setup.bash
