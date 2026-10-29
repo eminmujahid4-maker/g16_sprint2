@@ -37,7 +37,7 @@ class DrawNumber(Node):
         self.tiempo = 0.0
         self.pausa = False
         self.timer = self.create_timer(0.05, self.dibujar)
-        self.get_logger().info('Nodo draw_number_turtlebot iniciado.')
+        self.get_logger().info('Nodo draw_number_jetbot iniciado.')
 
     def stop(self, request, response):
         self.pausa = True
