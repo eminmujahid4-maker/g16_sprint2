@@ -39,7 +39,7 @@ Terminal 2 (dibuja el número):
 ```
 cd g16_prii3_ws
 source install/setup.bash
-ros2 launch g16_prii3_move_turtlebot draw_number_launch.py
+ros2 launch g16_prii3_move_turtlebot draw_number.launch.py
 ```
 
 ## Simulación: servicios
